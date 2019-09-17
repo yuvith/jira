@@ -1,0 +1,39 @@
+export PS1='$(whoami)@$(hostname -A):$(pwd)>'
+
+#User specific environment and startup programs
+
+export DB_MACHINE_NAME=dsojrad01.cryyqar5gbed.us-east-1.rds.amazonaws.com
+
+export DB_INST_NAME=dsojrad01
+
+export DB_USER_NAME=jrausr01
+
+export PGPASSWORD=jrausr01
+
+export DB_PORT=1433
+
+alias psu='ps -eflgrep "${USER}"'
+
+alias h='history'
+
+alias srvs='cd /apps/jira/server/bin'
+
+alias srvl='cd /apps/jira/server/logs'
+alias srvd='cd /apps/jira/server/jira_data'
+
+alias srvdl='cd /apps/jira/server/jira_data/log'
+
+alias jpsql='psql - h ${DB_MACHINE_NAME} -p ${DB_PORT} -d ${DB_INST_NAME} -U
+${DB_USER_NAME}'
+   
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64
+
+export http_proxy=http://proxy.us-east-1.app.dtcc.org:8080
+
+export https_proxy=http://proxy.us-east-1.app.dtcc.org:8080
+
+export no_proxy=169.254.169.254.repo.dtcc.com.code.dtcc.com,jira.dtcc.com
+
+export PATH=/apps/jira/sw/pgsql/bin:${PATH}
+
+set -o emacs
