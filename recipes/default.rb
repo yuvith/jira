@@ -1,4 +1,3 @@
-#
 # Cookbook Name:: jira
 # Recipe:: default
 #

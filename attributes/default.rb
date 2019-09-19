@@ -17,4 +17,3 @@ default['itwt_jira']['scripts_dir'] = default['itwt_jira']['home'] + '/bin'
 
 default['itwt_jira']['ppmusername'] = 'ppmuser'
 default['itwt_jira']['ppmgroupname'] = 'ppmuser'
-

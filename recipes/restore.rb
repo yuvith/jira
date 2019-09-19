@@ -1,8 +1,7 @@
-#Restoring data
+# Restoring data
+# Stop jira
 
-#Stop jira 
-
-execute 'Execute Stop jira' do 
+execute 'Execute Stop jira' do
   user    'root'
   command <<-EOH
   cd /apps/jira/server/atlassian-jira-6.4.14-standalone/bin/ /
@@ -10,14 +9,14 @@ execute 'Execute Stop jira' do
   EOH
 end
 
-#Modifying the setenv.sh script
+# Modifying the setenv.sh script
 
 template '/apps/jira/server/atlassian-jira-6.4.14-standalone/bin/setenv.sh' do
- variables(
-  :jvm_min => '12288m',
-  :jvm_max => '13684m',
-  :disable_notify => ''
- )
- source 'setenv.sh.erb'
- action :create
+  variables(
+    jvm_min: '12288m',
+    jvm_max: '13684m',
+    disable_notify: ''
+  )
+  source 'setenv.sh.erb'
+  action :create
 end

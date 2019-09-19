@@ -1,4 +1,4 @@
-#PPM Account
+# ppm_account
 
 # This block will update the ppm user if it does not exist
 
@@ -18,11 +18,9 @@ group 'create ppm group if not existing' do
   action :create
 end
 
-
-
 directory "#{node['itwt_jira']['root']}/feeds/hpppm" do
-    owner node['itwt_jira']['ppmusername']
-    group node['itwt_jira']['ppmgroupname']
-    mode node['itwt_jira']['default_mode']
-	recursive true
+  owner node['itwt_jira']['ppmusername']
+  group node['itwt_jira']['ppmgroupname']
+  mode node['itwt_jira']['default_mode']
+  recursive true
 end
